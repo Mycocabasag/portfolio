@@ -211,10 +211,13 @@
         /* About Section */
         section {
             padding: 20px 0;
+            /* Add large margin to prevent content overlap */
+            margin-bottom: 100vh;
         }
 
         #home {
             padding-top: 80px;
+            margin-bottom: 0;
         }
 
         .section-title {
@@ -676,6 +679,27 @@
             visibility: visible;
         }
 
+        /* CV Download Button */
+        .cv-download {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--dark-accent);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: var(--transition);
+            margin-top: 1rem;
+            width: fit-content;
+        }
+
+        .cv-download:hover {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 119, 255, 0.2);
+        }
+
         /* Animations */
         @keyframes fadeIn {
             from {
@@ -827,6 +851,11 @@
             .modal-image {
                 height: 200px;
             }
+            
+            /* Adjust section spacing for mobile */
+            section {
+                margin-bottom: 50vh;
+            }
         }
 
         @media (max-width: 576px) {
@@ -952,6 +981,7 @@
                         </div>
                     </div>
                     <div class="detail-item" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-tasks"></i  data-aos="fade-up" data-aos-delay="300">
                         <i class="fas fa-tasks"></i>
                         <div>
                             <h3>Experience</h3>
@@ -1095,7 +1125,18 @@
                         </div>
                         <div>
                             <h4>Email</h4>
-                            <p><a href="mailto:cabasagmyco7@gmail.com">cabasagmyco7@gmail.com</a></p>
+                            <p><a href="mailto:mycocabasag@gmail.com">mycocabasag@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Resume</h4>
+                            <a href="#" class="cv-download" id="downloadCV">
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
                         </div>
                     </div>
                     <div class="social-links">
@@ -1181,7 +1222,7 @@
     </button>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     
     <!-- Inline JavaScript -->
@@ -1426,6 +1467,25 @@
                 // Add your form submission logic here
                 alert('Thank you for your message! I will get back to you soon.');
                 contactForm.reset();
+            });
+        }
+
+        // CV Download Functionality
+        const downloadCV = document.getElementById('downloadCV');
+        if (downloadCV) {
+            downloadCV.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Create confirmation dialog
+                if (confirm('Download CV?')) {
+                    // Create a temporary link
+                    const link = document.createElement('a');
+                    link.href = 'MycoCabasag_CurriculumVitae.pdf'; // Path to your CV file
+                    link.download = 'MycoCabasag_CurriculumVitae.pdf';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
             });
         }
 
