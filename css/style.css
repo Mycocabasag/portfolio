@@ -103,6 +103,7 @@ body {
   display: flex;
   align-items: center;
   padding-top: 80px;
+  margin-bottom: 4rem;
 }
 
 .hero-content {
@@ -190,12 +191,21 @@ body {
 /* About Section */
 section {
   padding: 20px 0;
-  /* Add large margin to prevent content overlap */
-  margin-bottom: 100vh;
 }
 
-#home {
-  padding-top: 80px;
+#about {
+  margin-bottom: 4rem;
+}
+
+#skills {
+  margin-bottom: 4rem;
+}
+
+#projects {
+  margin-bottom: 4rem;
+}
+
+#contact {
   margin-bottom: 0;
 }
 
@@ -414,7 +424,7 @@ section {
   justify-content: center;
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 0 4rem; /* Add bottom padding */
 }
 
 .contact-info {
@@ -548,8 +558,9 @@ section {
 /* Footer */
 footer {
   background: var(--dark-accent);
-  padding: 2.04rem 0; /* Increased by 2% */
-  margin-top: 4.08rem; /* Increased by 2% */
+  padding: 2rem 0;
+  margin-top: 0;
+  position: relative;
 }
 
 .footer-content {
