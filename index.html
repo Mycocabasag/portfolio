@@ -55,7 +55,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(10, 10, 20, 0.9);
+            background: rgba(10, 10, 20, 0.5); /* Changed to 50% opacity */
             backdrop-filter: blur(10px);
             z-index: 1000;
             padding: 1rem 0;
@@ -64,7 +64,7 @@
 
         .navbar.scrolled {
             padding: 0.8rem 0;
-            background: rgba(10, 10, 20, 0.95);
+            background: rgba(10, 10, 20, 0.5); /* Changed to 50% opacity */
         }
 
         .navbar-container {
@@ -247,6 +247,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            justify-items: center; /* Center items horizontally */
+            text-align: center; /* Center text */
         }
 
         .detail-item {
@@ -254,9 +256,12 @@
             padding: 1.5rem;
             border-radius: 10px;
             display: flex;
-            align-items: flex-start;
+            flex-direction: column; /* Changed to column for center alignment */
+            align-items: center; /* Center items */
             gap: 1rem;
             transition: var(--transition);
+            width: 100%;
+            max-width: 300px;
         }
 
         .detail-item:hover {
@@ -279,6 +284,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            justify-items: center; /* Center items horizontally */
         }
 
         .skill-category {
@@ -286,6 +292,9 @@
             padding: 2rem;
             border-radius: 10px;
             transition: var(--transition);
+            width: 100%;
+            max-width: 300px;
+            text-align: center; /* Center text */
         }
 
         .skill-category:hover {
@@ -301,19 +310,20 @@
 
         .skill-list {
             list-style: none;
+            text-align: center; /* Center list items */
         }
 
         .skill-list li {
             margin: 0.5rem 0;
             position: relative;
-            padding-left: 1.5rem;
+            padding-left: 0; /* Remove left padding */
         }
 
         .skill-list li::before {
             content: '•';
             color: var(--secondary-color);
-            position: absolute;
-            left: 0;
+            margin-right: 0.5rem; /* Add right margin instead of absolute positioning */
+            display: inline-block; /* Make it inline */
         }
 
         /* Projects Section */
@@ -321,6 +331,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            justify-items: center; /* Center items horizontally */
         }
 
         .project-card {
@@ -328,6 +339,8 @@
             border-radius: 10px;
             overflow: hidden;
             transition: var(--transition);
+            width: 100%;
+            max-width: 350px;
         }
 
         .project-card:hover {
@@ -372,6 +385,7 @@
 
         .project-content {
             padding: 1.5rem;
+            text-align: center; /* Center text */
         }
 
         .project-tech {
@@ -379,6 +393,7 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-top: 1rem;
+            justify-content: center; /* Center tech tags */
         }
 
         .tech-tag {
@@ -393,6 +408,9 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 4rem;
+            justify-items: center; /* Center items horizontally */
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .contact-item {
@@ -418,6 +436,8 @@
             background: var(--dark-accent);
             padding: 2rem;
             border-radius: 10px;
+            width: 100%;
+            max-width: 450px;
         }
 
         .form-group {
@@ -443,6 +463,7 @@
             display: flex;
             gap: 1rem;
             margin-top: 2rem;
+            justify-content: center; /* Center social links */
         }
 
         .social-link {
@@ -705,7 +726,7 @@
                 top: 70px;
                 left: 0;
                 width: 100%;
-                background: rgba(10, 10, 20, 0.95);
+                background: rgba(10, 10, 20, 0.5); /* Changed to 50% opacity */
                 flex-direction: column;
                 align-items: center;
                 padding: 2rem 0;
@@ -964,7 +985,7 @@
                         </div>
                         <div>
                             <h4>Email</h4>
-                            <p>mycocabasag@gmail.com</p>
+                            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a7cadec4c8c4c6c5c6d4c6c0e7c0cac6cecb89c4c8ca">[email&#160;protected]</a></p>
                         </div>
                     </div>
                     <div class="social-links">
@@ -1050,7 +1071,7 @@
     </button>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     
     <!-- Inline JavaScript -->
@@ -1314,4 +1335,3 @@
     </script>
 </body>
 </html>
-
