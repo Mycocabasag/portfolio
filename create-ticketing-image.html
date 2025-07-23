@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Ticketing System - Project Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .project-preview {
+            width: 400px;
+            height: 300px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #6B8E6B, #4A7C59);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        
+        .content {
+            padding: 30px 20px;
+            text-align: center;
+        }
+        
+        .logo-area {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .form-elements {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+        
+        .input-field {
+            height: 35px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            background: #f9f9f9;
+        }
+        
+        .button {
+            height: 40px;
+            background: linear-gradient(135deg, #6B8E6B, #4A7C59);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .tech-stack {
+            position: absolute;
+            bottom: 15px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .tech-tag {
+            background: #667eea;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 500;
+        }
+        
+        .watermark {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: rgba(255,255,255,0.9);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-preview">
+        <div class="watermark">Portfolio Project</div>
+        <div class="header">IT HelpDesk System</div>
+        <div class="content">
+            <div class="logo-area">MCP</div>
+            <div class="title">Enhanced Ticketing System</div>
+            <div class="subtitle">with Replacement Request System</div>
+            <div class="form-elements">
+                <div class="input-field"></div>
+                <div class="input-field"></div>
+                <div class="button"></div>
+            </div>
+        </div>
+        <div class="tech-stack">
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">SMTP</span>
+            <span class="tech-tag">JavaScript</span>
+        </div>
+    </div>
+    
+    <script>
+        // Instructions for creating the actual image
+        console.log(`
+        📸 TO CREATE YOUR PROJECT IMAGE:
+        
+        1. Take a screenshot of your actual Enhanced Ticketing System
+        2. Save it as 'ticketing-project.jpg'
+        3. Place it in the 'images/' folder of your portfolio
+        4. The image should be approximately 400x300 pixels
+        5. Make sure it shows the login interface clearly
+        
+        Your portfolio is already configured to display this image!
+        `);
+        
+        // Auto-generate a canvas version for download
+        setTimeout(() => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = 400;
+            canvas.height = 300;
+            
+            // Create a simple placeholder
+            const gradient = ctx.createLinearGradient(0, 0, 400, 300);
+            gradient.addColorStop(0, '#667eea');
+            gradient.addColorStop(1, '#764ba2');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, 400, 300);
+            
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 24px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('Enhanced Ticketing System', 200, 120);
+            
+            ctx.font = '16px Arial';
+            ctx.fillText('IT Support & Replacement Requests', 200, 150);
+            
+            ctx.font = '14px Arial';
+            ctx.fillText('Medical Center Parañaque', 200, 180);
+            
+            // Add tech stack
+            ctx.font = '12px Arial';
+            ctx.fillText('PHP • MySQL • SMTP • JavaScript', 200, 220);
+            
+            // Convert to downloadable image
+            const link = document.createElement('a');
+            link.download = 'ticketing-project.jpg';
+            link.href = canvas.toDataURL('image/jpeg', 0.9);
+            
+            // Auto-download placeholder
+            document.body.appendChild(link);
+            console.log('Placeholder image ready for download');
+        }, 1000);
+    </script>
+</body>
+</html>

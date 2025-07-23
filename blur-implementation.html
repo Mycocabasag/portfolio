@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Blur Implementation</title>
+    <style>
+        /* Quick implementation - add this to your existing CSS */
+        
+        /* Method 1: Target specific logo classes */
+        .medical-center-logo,
+        .company-logo,
+        .brand-logo,
+        .logo {
+            filter: blur(8px) !important;
+            -webkit-filter: blur(8px) !important;
+        }
+        
+        /* Method 2: Target images in left container */
+        .left-container img,
+        .left-panel img,
+        .login-left img {
+            filter: blur(8px) !important;
+            -webkit-filter: blur(8px) !important;
+        }
+        
+        /* Method 3: Target by position (left half of screen) */
+        .container:first-child img {
+            filter: blur(8px) !important;
+            -webkit-filter: blur(8px) !important;
+        }
+        
+        /* Method 4: Universal blur for any logo-related element */
+        [class*="logo"] img,
+        [class*="brand"] img,
+        [id*="logo"] img,
+        [id*="brand"] img {
+            filter: blur(8px) !important;
+            -webkit-filter: blur(8px) !important;
+        }
+    </style>
+</head>
+<body>
+    <h1>Logo Blur Implementation Guide</h1>
+    
+    <h2>Option 1: CSS Only (Recommended)</h2>
+    <p>Add this CSS to your existing stylesheet or create a new one:</p>
+    <pre><code>
+/* Blur the Medical Center logo */
+.logo, .brand, .medical-center-logo {
+    filter: blur(8px) !important;
+    -webkit-filter: blur(8px) !important;
+}
+
+/* Target images in left container */
+.left-container img, .left-panel img {
+    filter: blur(8px) !important;
+    -webkit-filter: blur(8px) !important;
+}
+    </code></pre>
+    
+    <h2>Option 2: JavaScript Implementation</h2>
+    <p>Include the blur-logo.js file in your HTML:</p>
+    <pre><code>
+&lt;script src="blur-logo.js"&gt;&lt;/script&gt;
+    </code></pre>
+    
+    <h2>Option 3: Inline Style (Quick Fix)</h2>
+    <p>Add this directly to your HTML head section:</p>
+    <pre><code>
+&lt;style&gt;
+.logo, .brand, [class*="logo"] {
+    filter: blur(8px) !important;
+    -webkit-filter: blur(8px) !important;
+}
+&lt;/style&gt;
+    </code></pre>
+    
+    <h2>Option 4: Browser Developer Tools (Temporary)</h2>
+    <p>For immediate testing, open browser developer tools (F12) and add this to the console:</p>
+    <pre><code>
+// Blur all images in the left half of the screen
+document.querySelectorAll('img').forEach(img => {
+    const rect = img.getBoundingClientRect();
+    if (rect.left < window.innerWidth / 2) {
+        img.style.filter = 'blur(8px)';
+        img.style.webkitFilter = 'blur(8px)';
+    }
+});
+    </code></pre>
+    
+    <script>
+        // Auto-blur implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Find and blur logos automatically
+            const logoElements = document.querySelectorAll('.logo, .brand, [class*="logo"], [class*="brand"]');
+            logoElements.forEach(element => {
+                element.style.filter = 'blur(8px)';
+                element.style.webkitFilter = 'blur(8px)';
+            });
+            
+            // Also blur images that might be logos
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                const rect = img.getBoundingClientRect();
+                if (rect.left < window.innerWidth / 2) {
+                    img.style.filter = 'blur(8px)';
+                    img.style.webkitFilter = 'blur(8px)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+/* CSS to blur the Medical Center Parañaque logo in the IT HelpDesk */
+
+/* Target the logo container in the left panel */
+.logo-container,
+.medical-center-logo,
+.left-panel .logo,
+.brand-logo,
+[class*="logo"],
+[class*="brand"] {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -o-filter: blur(8px);
+    -ms-filter: blur(8px);
+}
+
+/* Alternative approach - target by image source or alt text */
+img[src*="medical"],
+img[src*="center"],
+img[src*="paranaque"],
+img[alt*="Medical"],
+img[alt*="Center"],
+img[alt*="Paranaque"] {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -o-filter: blur(8px);
+    -ms-filter: blur(8px);
+}
+
+/* Target the left container specifically */
+.left-container .logo,
+.left-panel .brand,
+.login-left .logo {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+/* If the logo is in a specific div or section */
+.login-container .left-side img,
+.auth-left img,
+.brand-section img {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+
+/* More specific targeting for the IT HelpDesk interface */
+.helpdesk-login .logo,
+.medical-center-brand {
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: filter 0.3s ease;
+}
+
+/* Fallback for any logo in the left half of the screen */
+.container:first-child img,
+.left img {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
